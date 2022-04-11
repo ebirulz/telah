@@ -1,0 +1,4 @@
+#Mon Apr 11 19:24:05 WAT 2022
+base.0=C\:\\Users\\user\\Desktop\\telah\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

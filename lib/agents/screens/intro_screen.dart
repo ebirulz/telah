@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 
+import 'package:telah/agents/screens/login/account_login_screen.dart';
+
+
 class IntroScreen extends StatefulWidget {
   const IntroScreen({Key? key}) : super(key: key);
 
@@ -106,6 +109,11 @@ class _IntroScreenState extends State<IntroScreen> {
                     InkWell(
                       borderRadius: const BorderRadius.all(Radius.circular(8)),
                       onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                const AccountLoginScreen()));
                       },
                       child: const Padding(
                         padding: EdgeInsets.all(8.0),
