@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:telah/agents/screens/intro_screen.dart';
-import 'package:telah/agents/screens/signup/account_type_screen.dart';
-import 'package:telah/agents/screens/signup/account_name_screen.dart';
-import 'package:telah/agents/screens/signup/account_email_screen.dart';
-import 'package:telah/agents/screens/signup/account_password_screen.dart';
-import 'package:telah/agents/screens/signup/account_phone_screen.dart';
+import 'package:telah/intro_screen.dart';
+import 'package:telah/auth/signup/account_type_screen.dart';
+import 'package:telah/auth/signup/account_name_screen.dart';
+import 'package:telah/auth/signup/account_email_screen.dart';
+import 'package:telah/splash_screen.dart';
+import 'auth/signup/account_password_screen.dart';
+import 'auth/signup/account_phone_screen.dart';
 
 
 void main() {
@@ -26,8 +27,11 @@ class MyApp extends StatelessWidget {
         fontFamily: GoogleFonts.raleway().fontFamily,
         backgroundColor: Colors.white
       ),
-      initialRoute: '/agent_intro',
+      initialRoute: '/splashscreen',
       routes: {
+
+        // General Screen Route
+        '/splashscreen': (context) => const SplashScreen(),
 
         //Agents Screen Route
         '/agent_intro': (context) => const IntroScreen(),

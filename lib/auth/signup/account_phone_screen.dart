@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
 import '../../utils/sizemodel.dart';
+import 'account_password_screen.dart';
 
-class AccountEmailScreen extends StatefulWidget {
-  const AccountEmailScreen({Key? key}) : super(key: key);
+
+class AccountPhoneScreen extends StatefulWidget {
+  const AccountPhoneScreen({Key? key}) : super(key: key);
 
   @override
-  _AccountEmailScreenState createState() => _AccountEmailScreenState();
+  _AccountPhoneScreenState createState() => _AccountPhoneScreenState();
 }
 
-class _AccountEmailScreenState extends State<AccountEmailScreen> {
+class _AccountPhoneScreenState extends State<AccountPhoneScreen> {
   @override
   Widget build(BuildContext context) {
     Sizes().heightSizeCalc(context);
@@ -33,16 +36,29 @@ class _AccountEmailScreenState extends State<AccountEmailScreen> {
             child: SingleChildScrollView(
               child: Column(
                 children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(left: 16, right: 16),
+                    child: Center(
+                        child: FAProgressBar(
+                          currentValue: 80,
+                          backgroundColor: const Color(0xffE3E6E8),
+                          progressColor: Colors.blue,
+                          size: 9,
+                        )),
+                  ),
+                  const SizedBox(
+                    height: 40,
+                  ),
                   SizedBox(
-                    width: 112,
-                    child: Image.asset('assets/images/home.png'),
+                    width: 60,
+                    child: Image.asset('assets/images/phone.png'),
                   ),
                   const SizedBox(
                     height: 20,
                   ),
                   const SizedBox(
                     width: 250,
-                    child: Text('Email Address',
+                    child: Text('Phone Number',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontWeight: FontWeight.w800,
@@ -53,7 +69,7 @@ class _AccountEmailScreenState extends State<AccountEmailScreen> {
                   const SizedBox(
                     //width: 250,
                     child:
-                    Text('We won’t spam you, we promise',
+                    Text('What is your phone number?',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 15,
@@ -74,24 +90,29 @@ class _AccountEmailScreenState extends State<AccountEmailScreen> {
                             fontSize: 18,
                           ),
                           //cursorColor: AppTheme.getTheme().primaryColor,
-                          decoration: const InputDecoration(
-                            labelText: "Email",
+                          decoration: InputDecoration(
+                            labelText: "Phone Number",
                             errorText: null,
-                            enabledBorder: OutlineInputBorder(
-                                borderSide:  BorderSide(color: Colors.blue),
+                            enabledBorder: const OutlineInputBorder(
+                                borderSide:  BorderSide(color: Colors.grey),
                                 borderRadius: BorderRadius.all(Radius.circular(20))
                             ),
-                            focusedBorder: OutlineInputBorder(
+                            focusedBorder: const OutlineInputBorder(
                                 borderSide: BorderSide(color: Colors.blue),
                                 borderRadius: BorderRadius.all(Radius.circular(20))
                             ),
+                            prefixText: "+234",
+                            suffixIcon: SizedBox(
+                              height: 10,
+                              child: Image.asset('assets/images/ngn.png'),
+                            )
                           ),
                         ),
                       ),
                     ),
                   ),
                   const SizedBox(
-                    height: 200,
+                    height: 280,
                   ),
                   Padding(
                     padding: const EdgeInsets.only(
@@ -107,14 +128,20 @@ class _AccountEmailScreenState extends State<AccountEmailScreen> {
                         child: InkWell(
                           borderRadius:
                           const BorderRadius.all(Radius.circular(10.0)),
-                          highlightColor: Colors.redAccent,
-                          onTap: () {},
+                          highlightColor: Colors.blue.shade400,
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                    const AccountPwdScreen()));
+                          },
                           child: const Center(
                             child: Text(
                               "Proceed",
                               style: TextStyle(
                                   fontWeight: FontWeight.w500,
-                                  fontSize: 16,
+                                  fontSize: 18,
                                   color: Colors.white),
                             ),
                           ),

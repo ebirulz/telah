@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:telah/agents/utils/sizemodel.dart';
+import 'package:telah/utils/sizemodel.dart';
 
 class UserWidgets {
   button(

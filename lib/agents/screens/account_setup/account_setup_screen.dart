@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:telah/agents/widgets/customwidgets.dart';
-import 'package:telah/agents/utils/sizemodel.dart';
+
+import '../../../utils/sizemodel.dart';
+import '../../../widgets/customwidgets.dart';
 
 
 class AccountSetupScreen extends StatefulWidget {
@@ -58,7 +59,7 @@ class _AccountSetupScreenState extends State<AccountSetupScreen> {
             Stack(
             children: <Widget>[
             Container(
-            margin: EdgeInsets.only(bottom: 20),
+            margin: const EdgeInsets.only(bottom: 20),
             width: 100,
             height: 100,
             decoration: const BoxDecoration(

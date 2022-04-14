@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:telah/agents/utils/sizemodel.dart';
-import 'package:telah/agents/screens/signup/account_email_screen.dart';
+import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
+
+import '../../utils/sizemodel.dart';
+import 'account_email_screen.dart';
 
 
 class AccountNameScreen extends StatefulWidget {
@@ -36,16 +38,29 @@ class _AccountNameScreenState extends State<AccountNameScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
+               Padding(
+                padding: const EdgeInsets.only(left: 16, right: 16),
+                child: Center(
+                    child: FAProgressBar(
+                      currentValue: 40,
+                      backgroundColor: const Color(0xffE3E6E8),
+                      progressColor: Colors.blue,
+                      size: 9,
+                    )),
+              ),
+              const SizedBox(
+                height: 40,
+              ),
               SizedBox(
                 width: 60,
-                child: Image.asset('assets/images/home.png'),
+                child: Image.asset('assets/images/user1.png'),
               ),
               const SizedBox(
                 height: 20,
               ),
               const SizedBox(
                 width: 250,
-                child: Text('What is your name',
+                child: Text('Let\'s get acquainted',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontWeight: FontWeight.w800,
@@ -56,7 +71,7 @@ class _AccountNameScreenState extends State<AccountNameScreen> {
               const SizedBox(
                 //width: 250,
                 child:
-                Text('Please use your real name',
+                Text('what is your name?',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 15,
@@ -81,7 +96,7 @@ class _AccountNameScreenState extends State<AccountNameScreen> {
                         labelText: "First Name",
                         errorText: null,
                         enabledBorder: OutlineInputBorder(
-                            borderSide:  BorderSide(color: Colors.blue),
+                            borderSide:  BorderSide(color: Colors.grey),
                             borderRadius: BorderRadius.all(Radius.circular(20))
                         ),
                         focusedBorder: OutlineInputBorder(
@@ -112,7 +127,7 @@ class _AccountNameScreenState extends State<AccountNameScreen> {
                         labelText: "Last Name",
                         errorText: null,
                         enabledBorder: OutlineInputBorder(
-                            borderSide:  BorderSide(color: Colors.blue),
+                            borderSide:  BorderSide(color: Colors.grey),
                             borderRadius: BorderRadius.all(Radius.circular(20))
                         ),
                         focusedBorder: OutlineInputBorder(
@@ -125,7 +140,7 @@ class _AccountNameScreenState extends State<AccountNameScreen> {
                 ),
               ),
               const SizedBox(
-                height: 130,
+                height: 200,
               ),
               Padding(
                 padding: const EdgeInsets.only(
@@ -141,7 +156,7 @@ class _AccountNameScreenState extends State<AccountNameScreen> {
                     child: InkWell(
                       borderRadius:
                       const BorderRadius.all(Radius.circular(10.0)),
-                      //highlightColor: Colors.redAccent,
+                      highlightColor: Colors.blue.shade400,
                       onTap: () {
                         Navigator.push(
                             context,
@@ -154,7 +169,7 @@ class _AccountNameScreenState extends State<AccountNameScreen> {
                           "Proceed",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
-                              fontSize: 16,
+                              fontSize: 18,
                               color: Colors.white),
                         ),
                       ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
-
-import 'package:telah/agents/screens/login/account_login_screen.dart';
+import 'package:telah/auth/login/account_login_screen.dart';
 
 
 class IntroScreen extends StatefulWidget {
@@ -19,13 +18,13 @@ class _IntroScreenState extends State<IntroScreen> {
         children: <Widget>[
           Column(
             children: <Widget>[
-              const SizedBox(height: 80,),
-              Center(
+              const SizedBox(height: 120,),
+              /*Center(
                 child: SizedBox(
                   width: 112,
                   child: Image.asset('assets/images/welcome_logo.png'),
                 ),
-              ),
+              ),*/
               const SizedBox(
                 height: 20,
               ),
@@ -44,6 +43,9 @@ class _IntroScreenState extends State<IntroScreen> {
                         )
                     ),
                 ),
+              ),
+              const SizedBox(
+                height: 60,
               ),
               Center(
                 child: SizedBox(
@@ -74,7 +76,7 @@ class _IntroScreenState extends State<IntroScreen> {
                     color: Colors.transparent,
                     child: InkWell(
                       borderRadius: const BorderRadius.all(Radius.circular(10.0)),
-                      highlightColor: Colors.redAccent,
+                      highlightColor: Colors.blue.shade400,
                       onTap: () => Navigator.pushNamed(context, '/agent_account_type'),
                       child: const Center(
                         child: Text(

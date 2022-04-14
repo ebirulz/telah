@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:telah/agents/utils/sizemodel.dart';
-import 'package:telah/agents/screens/signup/account_name_screen.dart';
+import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
+import 'package:telah/utils/sizemodel.dart';
+import 'package:telah/auth/signup/account_name_screen.dart';
 
 class AccountTypeScreen extends StatefulWidget {
   const AccountTypeScreen({Key? key}) : super(key: key);
@@ -22,9 +23,9 @@ class _AccountTypeScreenState extends State<AccountTypeScreen> {
   Color selectColor = Colors.blue.withOpacity(.2);
   Color titleSelect = Colors.blueAccent.withOpacity(.7);
   String estate =
-      'Perfect for managing several properties located within the same area';
+      'Perfect for managing large property units with numerous tenants to account for.';
   String landlord =
-      'Perfect for managing several properties located within the same area';
+      'Perfect Landlords with small units of properties to manage';
   String agent =
       'Perfect for managing several properties located within the same area';
   String optionSelected = 'Select';
@@ -53,12 +54,25 @@ class _AccountTypeScreenState extends State<AccountTypeScreen> {
           data: MediaQuery.of(context).copyWith(textScaleFactor: 1),
           child: Padding(
             padding: EdgeInsets.only(
-                top: Sizes.h40,
+                top: Sizes.h20,
                 left: Sizes.w10,
                 right: Sizes.w10,
                 bottom: Sizes.w10),
             child: Column(
               children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 16, right: 16),
+                  child: Center(
+                      child: FAProgressBar(
+                        currentValue: 20,
+                        backgroundColor: const Color(0xffE3E6E8),
+                        progressColor: Colors.blue,
+                        size: 9,
+                      )),
+                ),
+                const SizedBox(
+                  height: 25,
+                ),
                 Center(
                     child: Text(
                   'How are you planning\n to use TELAH',
@@ -72,7 +86,7 @@ class _AccountTypeScreenState extends State<AccountTypeScreen> {
                 ),
                 const Text(
                   'This will help us streamline your setup experience',
-                  style: TextStyle(color: Colors.grey),
+                  style: TextStyle(color: Colors.grey, fontSize: 13),
                 ),
                 Divider(
                   height: Sizes.h40,
@@ -81,19 +95,19 @@ class _AccountTypeScreenState extends State<AccountTypeScreen> {
                 GestureDetector(
                   onTap: () {
                     setState(() {
-                      optionSelected = 'estates';
+                      optionSelected = 'agents_agencies';
                       title1 = titleSelect;
                       box1 = selectColor;
                       border1 = selectColor;
                       title2 = Colors.black;
                       box2 = Colors.transparent;
-                      border2 = Colors.grey.withOpacity(.2);
+                      border2 = Colors.grey.withOpacity(.1);
                       title3 = Colors.black;
                       box3 = Colors.transparent;
-                      border3 = Colors.grey.withOpacity(.2);
+                      border3 = Colors.grey.withOpacity(.1);
                     });
                   },
-                  child: options('For Estates', estate,
+                  child: options('For Agents and Agencies', estate,
                       'assets/images/option.png', title1, box1, border1),
                 ),
                 Divider(
@@ -137,7 +151,7 @@ class _AccountTypeScreenState extends State<AccountTypeScreen> {
                       border2 = Colors.grey.withOpacity(.2);
                     });
                   },
-                  child: options('For Agents', agent,
+                  child: options('For Estates', agent,
                       'assets/images/option.png', title3, box3, border3),
                 ),
                 const Expanded(
@@ -193,7 +207,7 @@ class _AccountTypeScreenState extends State<AccountTypeScreen> {
     return Padding(
       padding: EdgeInsets.only(bottom: Sizes.h8),
       child: SizedBox(
-        height: Sizes.h90,
+        height: Sizes.h120,
         width: double.infinity,
         child: Padding(
           padding: EdgeInsets.only(
@@ -203,7 +217,7 @@ class _AccountTypeScreenState extends State<AccountTypeScreen> {
             children: [
               Container(
                 height: Sizes.h120,
-                width: Sizes.w100,
+                width: Sizes.w120,
                 decoration: BoxDecoration(
                     color: boxColor,
                     border: Border.all(color: borderColor),
@@ -228,7 +242,7 @@ class _AccountTypeScreenState extends State<AccountTypeScreen> {
                     Text(title,
                         style: TextStyle(
                             color: titleColor,
-                            fontSize: Sizes.w20,
+                            fontSize: Sizes.w18,
                             fontWeight: FontWeight.bold)),
                     Divider(
                       color: Colors.transparent,
